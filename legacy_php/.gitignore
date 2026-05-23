@@ -1,0 +1,10 @@
+.env
+vendor/
+node_modules/
+logs/
+public/uploads/
+.vscode/
+.idea/
+*.log
+*.tmp
+*.bak

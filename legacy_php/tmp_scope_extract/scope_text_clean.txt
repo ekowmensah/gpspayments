@@ -1,0 +1,309 @@
+﻿Member Association Collection Management System
+Member registration
+Monthly dues
+Welfare contributions
+Levies
+Voluntary donations
+Special fundraising
+Payment tracking
+Arrears
+Receipts
+SMS reminders
+Financial reports
+1. Main Users/Roles
+Administrator
+Overall system manager.
+Will:
+Manage users
+Register members
+Create dues/levies
+Configure system settings
+View all reports
+Approve/void payments
+Manage backups
+Treasurer / Finance Officer
+Handles money-related activities.
+Will:
+Record payments
+Verify payments
+Generate receipts
+View financial reports
+Track arrears
+Reconcile bank/MoMo payments
+Secretary
+Handles member records.
+Will:
+Register and update members
+View payment status
+Generate member reports
+Send notices
+Auditor / Chairman
+Read-only oversight role.
+Can:
+View reports
+View audit logs
+View collections
+Check arrears
+Export reports
+Member
+Optional portal user.
+Will:
+Login
+View dues
+View arrears
+Make payment
+Download receipts
+View payment history or Statement
+2. Core Modules
+A. Member Management
+Capture:
+Member ID (Can be auto-generated or manually added)
+Full name
+Phone number
+Email
+Gender
+Date of birth
+Address
+Occupation
+Branch/group/unit, if applicable
+Date joined
+Status
+Next of kin
+Passport photo (can be uploaded or taken with phone camera)
+B. Groups / Branches / Zones
+This only applies if the association has sub-groups.
+Examples:
+Branches
+Zones
+Departments
+Units
+Classes
+Chapters
+Electoral areas
+Local groups
+If the association is small, this can simply be disabled.
+C. Dues / Levy / Contribution Setup
+Admin can create different collection items.
+Examples:
+Collection Item
+Amount
+Type
+Monthly Dues
+GHS 20
+Recurring
+Welfare Contribution
+GHS 50
+Recurring
+Building Levy
+GHS 100
+One-time
+Funeral Support
+GHS 30
+Special Levy
+Voluntary Donation
+Any Amount
+Voluntary
+Annual Subscription
+GHS 200
+Yearly
+Each item will have:
+Name
+Description
+Amount
+Frequency
+Required or optional
+Start date
+Due date
+Applies to all members or selected group
+Status
+D. Payment Collection
+The system will support:
+Cash
+Mobile Money
+Card payment, optional
+USSD, optional
+Payment record should include:
+Member
+Collection item
+Amount
+Payment method
+Transaction reference
+Receipt number
+Payment date
+Received by
+Notes
+E. Arrears Tracking
+The system should calculate:
+Expected amount
+Paid amount
+Balance
+Months unpaid
+Partial payments
+Fully paid members
+Defaulters
+Example:
+Member
+Expected
+Paid
+Balance
+Status
+Kwame Mensah
+GHS 240
+GHS 200
+GHS 40
+Partial
+Ama Boateng
+GHS 240
+GHS 240
+GHS 0
+Paid
+Kojo Asare
+GHS 240
+GHS 60
+GHS 180
+Defaulter
+F. Manual and Digital Receipts (optional)
+Each payment should generate a receipt.
+Receipt details:
+Association name
+Logo
+Receipt number
+Member name
+Member ID
+Amount
+Collection item
+Payment method
+Date paid
+Transaction/reference number
+Received by
+QR code, optional
+G. Donations
+For voluntary contributions, the system should allow:
+Member donations
+Non-member donations
+Anonymous donations
+Project-specific donations
+General support donations
+Donation record should capture:
+Donor name
+Phone number
+Amount
+Purpose
+Payment method
+Receipt number
+Date
+3. Dashboard
+Dashboard should show:
+Card
+Meaning
+Total Members
+All registered members
+Active Members
+Members in good standing
+Total Expected
+Amount expected for selected period
+Total Collected
+Amount received
+Outstanding Balance
+Total arrears
+Todayâ€™s Collection
+Money received today
+Monthly Collection
+Current month total
+Defaulters
+Members owing
+Donations
+Total voluntary donations
+Example:
+Total Members: 450
+Expected This Month: GHS 22,500
+Collected This Month: GHS 16,800
+Outstanding: GHS 5,700
+Collection Rate: 74.67%
+4. Reports
+The system will generate:
+Member Reports
+All members
+Active members
+Inactive members
+Members by group/branch
+Members owing
+Fully paid members
+Members with partial payment
+Financial Reports
+Daily collection report
+Weekly collection report
+Monthly collection report
+Yearly collection report
+Dues report
+Levy report
+Donation report
+Cash collection report
+Mobile Money report
+Bank transfer report
+Arrears report
+Collector performance report
+Export Options
+Print
+PDF
+Excel
+CSV
+5. Proposed Menu Structure
+Dashboard
+Members
+- Add Member
+- All Members
+- Groups / Branches
+- Member Status
+Collections
+- Collection Items
+- Assign Collections
+- Record Payment
+- Bulk Payment Entry
+- Payment History
+Donations
+- Record Donation
+- Donation List
+Arrears
+- Arrears Summary
+- Defaulters
+- Partial Payments
+Receipts
+- Receipt List
+- Verify Receipt
+Reports
+- Daily Collections
+- Monthly Collections
+- Member Statement
+- Arrears Report
+- Donation Report
+- Export Reports
+SMS / Notifications
+- Send Reminder
+- SMS Logs
+- Message Templates
+Users & Roles
+- Admin Users
+- Roles
+- Permissions
+Settings
+- Association Profile
+- Payment Settings
+- Receipt Settings
+- Backup
+6. Payment Workflow
+Admin creates collection item
+â†“
+System assigns it to all or selected members
+â†“
+Member pays by cash/MoMo/bank/USSD
+â†“
+Treasurer records or system receives payment callback
+â†“
+System generates receipt
+â†“
+Payment updates member statement
+â†“
+Arrears balance reduces
+â†“
+Dashboard and reports update

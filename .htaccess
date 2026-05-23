@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Keep root rewrite rules disabled here.
+    # Redirection to /public is handled by root index.php to avoid
+    # Windows/XAMPP path rewrite issues.
+</IfModule>

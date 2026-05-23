@@ -1,0 +1,60 @@
+erDiagram
+    associations ||--o{ org_units : has
+    associations ||--o{ members : has
+    associations ||--o{ users : has
+    associations ||--o{ roles : has
+    associations ||--o{ collection_items : has
+    associations ||--o{ billing_periods : has
+    associations ||--o{ member_charges : has
+    associations ||--o{ payment_intents : has
+    associations ||--o{ payments : has
+    associations ||--o{ donations : has
+    associations ||--o{ settlements : has
+    associations ||--o{ reconciliation_batches : has
+    associations ||--o{ notification_templates : has
+    associations ||--o{ notification_logs : has
+    associations ||--o{ audit_logs : has
+    associations ||--o{ system_settings : has
+
+    org_units ||--o{ org_units : parent_of
+    org_units ||--o{ members : groups
+    members ||--o{ member_status_history : has
+    users ||--o{ member_status_history : changes
+
+    roles ||--o{ role_permissions : grants
+    permissions ||--o{ role_permissions : mapped_to
+    users ||--o{ user_roles : assigned
+    roles ||--o{ user_roles : holds
+
+    collection_items ||--o{ collection_item_units : scoped_to
+    org_units ||--o{ collection_item_units : included
+    collection_items ||--o{ collection_item_members : scoped_to
+    members ||--o{ collection_item_members : included
+    collection_items ||--o{ charge_runs : generates
+    billing_periods ||--o{ charge_runs : in_period
+    charge_runs ||--o{ member_charges : creates
+    members ||--o{ member_charges : owes
+    collection_items ||--o{ member_charges : charges
+    billing_periods ||--o{ member_charges : billed_in
+
+    payment_intents ||--o{ payments : becomes
+    members ||--o{ payment_intents : initiated_for
+    members ||--o{ payments : makes
+    collection_items ||--o{ payments : pays_for
+    payments ||--o{ payment_callbacks : receives
+    payments ||--o{ payment_allocations : allocates
+    member_charges ||--o{ payment_allocations : settled_by
+    payments ||--|| receipts : issues
+
+    payments ||--o{ donations : funds
+    members ||--o{ donations : donates
+
+    settlements ||--o{ settlement_items : contains
+    payments ||--o{ settlement_items : matches
+
+    reconciliation_batches ||--o{ reconciliation_items : contains
+    payments ||--o{ reconciliation_items : reviews
+
+    notification_templates ||--o{ notification_logs : used_by
+    members ||--o{ notification_logs : recipient
+
